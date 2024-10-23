@@ -6,12 +6,12 @@
         "subtitle": [
             "Exploring financial patterns across Victorian suburbs (2021-22) | 2021-22 income year - all individuals | Data source: ATO | By Allister Lim",
             "",
-"Based on the latest ATO tax report, this interactive map reveals income and tax distribution patterns across Victorian suburbs, highlighting the relationship",
-"between high-income areas and their tax contributions, while the visualization enables identification of wealth concentration and tax effectiveness,",
-"with particular focus on comparing total versus per-person metrics, revealing how population density impacts these measures.",
-"This tool supports tax policy enforcement by identifying areas of high income-to-tax ratios and helps track regional economic patterns,", 
-"while the distinction between total taxable income and income per person provides crucial insights into true wealth distribution versus population-driven aggregate values.",
-"The accompanying bar chart highlights top-performing suburbs for each metric, enabling comparison of income levels and tax contributions across regions, supporting both policy decisions and economic analysis."
+            "Based on the latest ATO tax report, this interactive map reveals income and tax distribution patterns across Victorian suburbs, highlighting the relationship",
+            "between high-income areas and their tax contributions, while the visualization enables identification of wealth concentration and tax effectiveness,",
+            "with particular focus on comparing total versus per-person metrics, revealing how population density impacts these measures.",
+            "This tool supports tax policy enforcement by identifying areas of high income-to-tax ratios and helps track regional economic patterns,", 
+            "while the distinction between total taxable income and income per person provides crucial insights into true wealth distribution versus population-driven aggregate values.",
+            "The accompanying bar chart highlights top-performing suburbs for each metric, enabling comparison of income levels and tax contributions across regions, supporting both policy decisions and economic analysis."
         ],
         "anchor": "start",
         "align": "left",
@@ -232,7 +232,7 @@
                     "field": "value",
                     "type": "quantitative",
                     "title": {
-                        "expr": "Metric_selection === 'total_taxable_income' || Metric_selection === 'num_taxable_income' ? 'Count' : 'Amount ($)'",
+                        "expr": "Metric_selection === 'num_taxable_income' || Metric_selection === 'num_tax_payers' ? 'Number of People' : 'Dollars ($)'",
                         "font": "Helvetica",
                         "fontSize": 14,
                         "fontWeight": 500
@@ -258,7 +258,7 @@
                         "values": {
                             "expr": "Metric_selection === 'total_taxable_income' ? ['total_taxable_income', 'total_tax'] : (Metric_selection === 'num_taxable_income' ? ['num_taxable_income', 'num_tax_payers'] : (Metric_selection === 'taxable_income_per_person' ? ['taxable_income_per_person', 'tax_per_person'] : [Metric_selection]))"
                         },
-                        "labelExpr": "datum.label === 'total_taxable_income' ? 'Total Taxable Income' : (datum.label === 'total_tax' ? 'Total Tax' : (datum.label === 'num_taxable_income' ? 'Number of Tax Returns' : (datum.label === 'num_tax_payers' ? 'Number of Tax Payers' : (datum.label === 'taxable_income_per_person' ? 'Taxable Income per Person' : 'Tax per Person'))))"
+                        "labelExpr": "datum.label === 'total_taxable_income' ? 'Total Taxable Income ($)' : (datum.label === 'total_tax' ? 'Total Tax ($)' : (datum.label === 'num_taxable_income' ? 'Number of Tax Returns (people)' : (datum.label === 'num_tax_payers' ? 'Number of Tax Payers (people)' : (datum.label === 'taxable_income_per_person' ? 'Taxable Income per Person ($)' : 'Tax per Person ($)'))))"
                     }
                 }
             },
